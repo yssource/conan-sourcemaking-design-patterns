@@ -101,7 +101,7 @@ CTestTestfile.cmake
 # === cmake ignore end ===
 
 # === org mode ignore start ===
-*.org
+# *.org
 # === org mode ignore end ===
 
 # === tags ignore start ===
