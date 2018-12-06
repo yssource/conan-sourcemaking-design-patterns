@@ -1,4 +1,5 @@
 set(BEFORE before)
+set(AFTER after)
 set(SAMPLE sample)
 set(MAIN main)
 
@@ -8,10 +9,12 @@ include_directories("include")
 
 # Add libraries.
 add_library(${BEFORE} STATIC before.cpp)
+add_library(${AFTER} STATIC after.cpp)
 add_library(${SAMPLE} STATIC sample.cpp)
 
 # # Link libraries.
 target_link_libraries(${BEFORE} ${CONAN_LIBS})
+target_link_libraries(${AFTER} ${CONAN_LIBS})
 target_link_libraries(${SAMPLE} ${CONAN_LIBS})
 
 # add_executable(${MAIN} main.cpp)

@@ -1,5 +1,4 @@
 #include "sample.h"
-#include <iostream>
 
 stringstream ss;
 int Shape::total_ = 0;

@@ -1,7 +1,9 @@
 set(SAMPLE-TESTER sample-test)
 set(BEFORE-TESTER before-test)
+set(AFTER-TESTER after-test)
 set(SAMPLE sample)
 set(BEFORE before)
+set(AFTER after)
 
 message(${SAMPLE-TESTER})
 
@@ -20,8 +22,10 @@ endif()
 include_directories("${PROJECT_SOURCE_DIR}/src/creational/abstract-factory/include")
 
 add_executable(${BEFORE-TESTER} before.cpp)
+add_executable(${AFTER-TESTER} after.cpp)
 add_executable(${SAMPLE-TESTER} sample.cpp)
 target_link_libraries(${BEFORE-TESTER} ${BEFORE} ${CONAN_LIBS})
+target_link_libraries(${AFTER-TESTER} ${AFTER} ${CONAN_LIBS})
 target_link_libraries(${SAMPLE-TESTER} ${SAMPLE} ${CONAN_LIBS})
 
 # enable_testing()
@@ -29,6 +33,9 @@ target_link_libraries(${SAMPLE-TESTER} ${SAMPLE} ${CONAN_LIBS})
 add_test(NAME ${BEFORE-TESTER}
          WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin
          COMMAND ${BEFORE-TESTER})
+add_test(NAME ${AFTER-TESTER}
+         WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+         COMMAND ${AFTER-TESTER})
 add_test(NAME ${SAMPLE-TESTER}
          WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin
          COMMAND ${SAMPLE-TESTER})

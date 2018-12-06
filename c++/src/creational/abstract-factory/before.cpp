@@ -1,6 +1,4 @@
 #include "before.h"
-#include <iostream>
-#define LINUX
 
 /**
  * Concrete product family 1.
@@ -34,10 +32,10 @@ string Client::draw() {
 #else // WINDOWS
   Widget *w = new WindowsButton;
 #endif
-  string s = w->draw();
-  string ss = display_window_one();
-  string sss = display_window_two();
-  return boost::str(boost::format("%s%s%s") % s % ss %sss);
+  auto s = w->draw();
+  auto ss = display_window_one();
+  auto sss = display_window_two();
+  return boost::str(boost::format("%s%s%s") % s % ss % sss);
 }
 
 string Client::display_window_one() {
@@ -46,8 +44,8 @@ string Client::display_window_one() {
 #else // WINDOWS
   Widget *w[] = {new WindowsButton, new WindowsMenu};
 #endif
-  string s = w[0]->draw();
-  string ss = w[1]->draw();
+  auto s = w[0]->draw();
+  auto ss = w[1]->draw();
   return boost::str(boost::format("%s%s") % s % ss);
 }
 
@@ -57,7 +55,7 @@ string Client::display_window_two() {
 #else // WINDOWS
   Widget *w[] = {new WindowsMenu, new WindowsButton};
 #endif
-  string s = w[0]->draw();
-  string ss = w[1]->draw();
+  auto s = w[0]->draw();
+  auto ss = w[1]->draw();
   return boost::str(boost::format("%s%s") % s % ss);
 }

@@ -111,3 +111,4 @@ GTAGS
 # === tags mode ignore end ===
 .mypy_cache/
 build/
+.breakpoints

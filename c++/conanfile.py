@@ -6,9 +6,9 @@ class SourcemakingConan(ConanFile):
     version = "0.0.0"
     license = "MIT"
     author = "Jimmy M. Gong yssource@163.com"
-    url = "https://github.com/yssource/sourcemaking-design-patterns"
-    description = "conan hello gtest example"
-    topics = ("conan", "hello", "gtest")
+    url = "https://github.com/yssource/conan-sourcemaking-design-patterns"
+    description = "conan-sourcemaking-design-patterns"
+    topics = ("conan", "sourcemaking", "design patterns")
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "SIMPLE": [True, False]}
     default_options = {"shared": False, "SIMPLE": True, "boost_test:shared": False}
